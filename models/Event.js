@@ -91,6 +91,14 @@ const eventSchema = new mongoose.Schema({
       type: String,
       required: true
     },
+    college: {
+      type: String,
+      required: true
+    },
+    phone: {
+      type: String,
+      required: true
+    },
     teamMembers: [
       {name: { 
         type: String,

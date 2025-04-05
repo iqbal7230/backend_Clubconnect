@@ -3,6 +3,7 @@ import connectDB from './database/db.js';
 import cors from 'cors';
 import authRouter from './routes/authRoutes.js';
 import EventRouter from './routes/eventRoutes.js';
+import registrationRoutes from './routes/participants.js';
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -19,6 +20,7 @@ app.use(express.json());
 // Routes
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/events', EventRouter);
+app.use('/api/v1/ParticipantsReg', registrationRoutes);
 
 app.use((err, req, res, next) => {
   console.error(err.stack);

@@ -5,6 +5,7 @@ import authRouter from './routes/authRoutes.js';
 import EventRouter from './routes/eventRoutes.js';
 import registrationRoutes from './routes/participants.js';
 import dotenv from 'dotenv';
+import feedbackRoutes from './routes/feedbackRoutes.js'; // Import the feedback routes
 dotenv.config();
 
 const app = express();
@@ -21,6 +22,7 @@ app.use(express.json());
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/events', EventRouter);
 app.use('/api/v1/ParticipantsReg', registrationRoutes);
+app.use('/api/v1/feedback', feedbackRoutes); 
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
